@@ -9,6 +9,13 @@ pipeline {
             }
         }
         
+         stage('Build') {
+            steps {
+                // Assuming your HTML file is at the root of the repository
+                sh 'cp index.html build/'  // Copy the HTML file to a build directory (adjust as needed)
+            }
+        }
+        
         stage('Test') {
             steps {
                 // Add commands to run any tests (for simplicity, we skip tests in this example)
