@@ -5,14 +5,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the source code from the repository
-                git 'https://github.com/harshalbhope/Jenkins_lab3.git'
-            }
-        }
-        
-        stage('Build') {
-            steps {
-                // Assuming your HTML file is at the root of the repository
-                sh 'cp index.html build/'  // Copy the HTML file to a build directory (adjust as needed)
+                git 'https://github.com/your-username/your-repo.git'
             }
         }
         
@@ -30,7 +23,7 @@ pipeline {
                 echo 'Deploying the HTML file...'
                 // Add your deployment command here
                 // For example, you could use rsync to copy the files to a server:
-                // sh 'rsync -avz build/ user@your-server:/path/to/deployment/'
+                // sh 'rsync -avz . user@your-server:/path/to/deployment/'
             }
         }
     }
